@@ -11,8 +11,11 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Configure CORS for production
 const corsOptions = {
-  origin: 'https://portfolio-dev-frontend-dvr0.onrender.com' | 'http://localhost:3000',
-  methods: ['GET,HEAD,PUT,PATCH,POST,DELETE'],
+  origin: [
+    'https://portfolio-dev-frontend-ckgia5klr-sricharan12-hubs-projects.vercel.app',
+    'http://localhost:5173'
+  ],
+  methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
   credentials: true
 };
 
