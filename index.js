@@ -9,7 +9,14 @@ dotenv.config();
 const app = express();
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-app.use(cors());
+// Configure CORS for production
+const corsOptions = {
+  origin: 'https://portfolio-dev-frontend-dvr0.onrender.com' | 'http://localhost:3000',
+  methods: ['GET,HEAD,PUT,PATCH,POST,DELETE'],
+  credentials: true
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Simple Request Logger
